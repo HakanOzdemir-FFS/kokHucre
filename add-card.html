@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/icon-font.css" />
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <section class="section-add-card">
+      <form id="cardForm" class="form">
+        <div class="form__group">
+          <input
+            type="file"
+            id="cardImage"
+            class="form__input"
+            accept="image/*"
+            required
+          />
+          <label for="cardImage" class="form__label">Fotoğraf</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="text"
+            placeholder="Ad Soyad"
+            id="card-name"
+            class="form__input"
+            required
+          />
+          <label for="card-name" class="form__label">Ad Soyad</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="text"
+            placeholder="Şehir"
+            id="card-description"
+            class="form__input"
+            required
+          />
+          <label for="card-description" class="form__label">Şehir</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="date"
+            placeholder="Sertifika Tarihi"
+            id="cert-date"
+            class="form__input"
+            required
+          />
+          <label for="cert-date" class="form__label">Sertifika Tarihi</label>
+        </div>
+        <div class="form__group">
+          <button id="create-card-btn" type="submit" class="btn btn--green">
+            Kart Ekle
+          </button>
+        </div>
+      </form>
+    </section>
+    
+    <section class="section-view-cards">
+      <h2>Kartlar</h2>
+      <table id="cardsTable">
+        <thead>
+          <tr>
+            <th>Ad Soyad</th>
+            <th>Şehir</th>
+            <th>Sertifika Tarihi</th>
+            <th>Fotoğraf</th>
+            <th>Sil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Kartlar buraya eklenecek -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

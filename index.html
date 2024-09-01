@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <!-- Firebase App (Ana SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<!-- Firebase Auth (isteğe bağlı) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo-box">
+        <img src="img/thetaHealing3.png" style="width: 15rem; height: auto;" alt="Logo" class="header__logo" />
+      </div>
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">KÖKTEN ŞİFA</span>
+          <span class="heading-primary--sub">GEÇMİŞ ATALARINI   <BR></BR>
+            ŞİMDİKİ AİLENİ ŞİFALANDIRIR</span>
+        </h1>
+        <a href="#section-certificate" class="btn btn--white">SERTİFİKA SAHİPLERİNİ KEŞFET</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-about">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">
+            Başka Hayatlara dokunmanın sırrını keşfet
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-2">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              KÖKTEN ŞİFA KURUCUSU KİMDİR?
+            </h3>
+            <p class="paragraph">
+            Merhaba, ben <strong>AYŞE ALTINTAŞ</strong>. Kökten Şifa eğitiminin kurucusuyum. Psikolojik ve fiziksel hastalıklarımın yanında; hayat alanımda karşıma çıkan, ağır problemler yaşadığım bir hayatım vardı. Bu zorluklarla mücadele edecek gücümün kalmadığını hissettiğim zaman bu yaşadıklarımın bilinçaltı ile ilgili olduğunu fark ettim.  <br> Birçok araştırma yaptıktan sonra kainatın yaratıcısı ile hissel iletişim kurarak önce kendimi iyileştirdim, daha sonra bu mucizevi sistemi insanların kendi hayatlarına nasıl uygulayabileceğini öğretmeyi seçtim.
+            </p>
+            <a href="#section-book" class="btn-text">Daha Fazla &rarr;</a>
+          </div>
+          <div class="col-1-of-2">
+            <div class="composition">
+              <img
+                src="img/nat-1-large.jpg"
+                alt="photo1"
+                class="composition__photo composition__photo--p1"
+              />
+              <img
+                src="img/nat-2-large.jpg"
+                alt="photo2"
+                class="composition__photo composition__photo--p2"
+              />
+              <img
+                src="img/nat-3-large.jpg"
+                alt="photo3"
+                class="composition__photo composition__photo--p3"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-features">
+        <div class="row">
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i
+                class="feature-box__icon icon-basic-world u-margin-bottom-medium"
+              ></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Explore the world
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                voluptatem consequuntur dolor ad porro esse aliquid
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i
+                class="feature-box__icon icon-basic-compass u-margin-bottom-medium"
+              ></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Meet Nature
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                voluptatem consequuntur dolor ad porro esse aliquid
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i
+                class="feature-box__icon icon-basic-map u-margin-bottom-medium"
+              ></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Find Your Way
+              </h3>
+              <p class="feature-box__text">
+                Quis officia, omnis itaque quasi cum voluptatibus, ipsam dolorum
+                suscipit labore minus praesentium excepturi molestias.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i
+                class="feature-box__icon icon-basic-heart u-margin-bottom-medium"
+              ></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Live healthier Life
+              </h3>
+              <p class="feature-box__text">
+                Ipsa sed iure blanditiis repudiandae, voluptate quidem a vitae
+                officia nihil fuga vero ducimus doloribus itaque!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="section-tours" id="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Sertifika Sahipleri</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-1-of-3">
+            <div class="card">
+              <div
+                class="card__side card__side--front card__side card__side--front-1"
+              >
+                <div class="card__picture card__picture--1"></div>
+                <h4 class="card__heading">
+                  <span class="card__heading--span card__heading--span--1"
+                    >The Sea Explorer</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>3 Day tours</li>
+                    <li>Up to 30 people</li>
+                    <li>2 tour guides</li>
+                    <li>Sleep in cozy hotels</li>
+                    <li>Difficulty: easy</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="card__side card__side--back card__side card__side--back-1"
+              >
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$290</p>
+                  </div>
+                  <a
+                    href="#popup"
+                    class="btn btn--white card__cta__btn card__cta__btn--1"
+                    >Book Now!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div
+                class="card__side card__side--front card__side card__side--front-2"
+              >
+                <div class="card__picture card__picture--2"></div>
+                <h4 class="card__heading">
+                  <span class="card__heading--span card__heading--span--2"
+                    >The Forest hiker</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>7 Day tours</li>
+                    <li>Up to 40 people</li>
+                    <li>6 tour guides</li>
+                    <li>Sleep in provided tents</li>
+                    <li>Difficulty: Medium</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="card__side card__side--back card__side card__side--back-2"
+              >
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$497</p>
+                  </div>
+                  <a
+                    href="#popup"
+                    class="btn btn--white card__cta__btn card__cta__btn--2"
+                    >Book Now!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div
+                class="card__side card__side--front card__side card__side--front-3"
+              >
+                <div class="card__picture card__picture--3"></div>
+                <h4 class="card__heading">
+                  <span class="card__heading--span card__heading--span--3"
+                    >The Forest hiker</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>5 Day tours</li>
+                    <li>Up to 15 people</li>
+                    <li>3 tour guides</li>
+                    <li>Sleep in provided tents</li>
+                    <li>Difficulty: Hard</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="card__side card__side--back card__side card__side--back-3"
+              >
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$897</p>
+                  </div>
+                  <a
+                    href="#popup"
+                    class="btn btn--white card__cta__btn card__cta__btn--3"
+                    >Book Now!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-huge">
+          <a href="#" class="btn btn--green">Tüm Sertifika Sahiplerini Gör</a>
+        </div>
+      </section> -->
+
+      <section section class="section-tours" id="section-certificate">
+        
+        
+        <div class="u-center-text u-margin-bottom-small">
+          <h2 class="heading-secondary">SERTİFİKA SAHİPLERİ</h2>
+        </div>
+        <div class="row__filter--Row">
+          <div class="u-center-text u-margin-bottom-medium card__filter">
+            <h3 class="u-margin-bottom-small">Filtrele</h3>
+            <div>
+              <ul>
+                <li>
+                  <input
+                  type="text"
+                  placeholder="Ad Soyad"
+                  id="card-name"
+                  class="form__input"
+                  required
+                />
+                <label for="card-name" class="form__label">Ad Soyad</label>
+                </li>
+                <li>
+                  <div class="form__group">
+                    <input
+                      type="text"
+                      placeholder="Şehir"
+                      id="card-description"
+                      class="form__input"
+                      required
+                    />
+                    <label for="card-description" class="form__label"
+                      >Şehir</label
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row row__slider-Row u-margin-bottom-small">
+          
+            <div class="slider">
+             
+
+
+              
+            </div>
+          <!-- Buraya JavaScript ile oluşturulacak kartlar eklenecek -->
+           
+           
+          </label>
+
+        </div>
+        <div class="row__slider--buttons">
+          <label class="btn__slide btn__slide--left  prevSlider">
+            <span class="btn__slide--arrow btn__slide__arrow--right btn__slide__arrow">&larr;</span>
+          </label>
+          <label class="btn__slide btn__slide--right nextSlider nextSlider">
+            <span class="btn__slide--arrow btn__slide__arrow btn__slide__arrow--left">&rarr;</span>
+         </div>
+      </section>
+      <script type="module" src="addCardIndex.js"></script>
+
+      <section class="section-stories">
+        <div class="bg-video">
+          <video class="bg-video__content" autoplay loop muted>
+            <source src="img/video.mp4" type="video/mp4" />
+            <source src="img/video.webm" type="video/webm" />
+            Your browser not sported video.
+          </video>
+        </div>
+
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Değişim Yaratıcı ile yolculukta gerçekleşir</h2>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img src="img/nat-8.jpg" alt="phto" class="story__img" />
+              <figcaption class="story__caption">Mary Smith</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                I had the best week ever with my family
+              </h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+                reprehenderit iure? Molestiae qui natus eius autem! Unde soluta
+                perferendis quos numquam temporibus animi laboriosam corporis.
+                Repellendus beatae aliquid voluptates corporis. Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img src="img/nat-9.jpg" alt="phto" class="story__img" />
+              <figcaption class="story__caption">Jack Wilson</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Wow! My life is completly different now
+              </h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+                reprehenderit iure? Molestiae qui natus eius autem! Unde soluta
+                perferendis quos numquam temporibus animi laboriosam corporis.
+                Repellendus beatae aliquid voluptates corporis. Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-huge">
+          <a href="#" class="btn-text">Tüm Yorumları Gör &rarr;</a>
+        </div>
+      </section>
+
+      <section id="section-book" class="section-book">
+        <div class="row">
+            <div class="book">
+                <div class="book__form">
+                    <form action="#" class="form">
+                        <div class="u-margin-bottom-medium">
+                            <h2 class="heading-secondary">
+                                Start booking now
+                            </h2>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Full name" id="name" required>
+                            <label for="name" class="form__label">Full name</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                            <label for="email" class="form__label">Email address</label>
+                        </div>
+
+                        <div class="form__group u-margin-bottom-medium">
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" id="small" name="size">
+                                <label for="small" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    Small tour group
+                                </label>
+                            </div>
+
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" id="large" name="size">
+                                <label for="large" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    Large tour group
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <button class="btn btn--green">Next step &rarr;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <img src="img/thetaHealing3.png" alt="asd" class="footer__logo" />
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <ul class="footer__list">
+            <div class="footer__navigation">
+              <li class="footer__item">
+                <a class="footer__link" href="#">Company</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">Contact Us</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">cAREERS</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">PRIVACY POLICY</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">TERMS</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <p class="footer__item">
+              Lorem ipsum
+              <span
+                ><a class="footer__link" href=" #"
+                  >consectetur adipisicing elit.</a
+                ></span
+              >, Dolore natus officiis ut sint magnam aperiam laudantium a at
+              porro velit voluptatem molestias<span
+                ><a class="footer__link" href=" #"
+                  >placeat amet explicabo!</a
+                ></span
+              >, provident, adipisci, eum corporis sapiente Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Consequuntur excepturi,
+              atque nulla est iure dolorum explicabo dignissimos quidem ratione
+              et sequi aliquam incidunt fugit, laboriosam consequatur tempore
+              non pariatur molestiae.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="a" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="a" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
+            deserunt eligendi repudiandae nemo culpa esse ullam alias officiis
+            fugiat, consequatur illo quae nostrum quaerat! Nisi rerum ducimus a
+            cumque consequatur. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Qui iusto excepturi rem perferendis fugit, at
+            officia earum, soluta dignissimos dolore exercitationem obcaecati
+            eveniet hic ratione deserunt quis eaque praesentium similique.
+          </p>
+          <a href="#" class="btn btn--green">Book Now!</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+    <div class="col-1-of-2">
+      col-1-of-2
+    </div>
+    <div class="col-1-of-2">
+      col-1-of-2
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1-of-3">
+      col-1-of-3
+    </div>
+    <div class="col-1-of-3">
+      col-1-of-3
+    </div>
+    <div class="col-1-of-3">
+      col-1-of-3
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-1-of-3">
+        col-1-of-3
+      </div>
+      <div class="col-2-of-3">
+        col-2-of-3
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="col-1-of-4">
+      col-1-of-4
+    </div>
+    <div class="col-1-of-4">
+      col-1-of-4
+    </div>
+    <div class="col-1-of-4">
+      col-1-of-4
+    </div>
+    <div class="col-1-of-4">
+      col-1-of-4
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-1-of-4">
+        col-1-of-4
+      </div>
+      <div class="col-1-of-4">
+        col-1-of-4
+      </div>
+      <div class="col-2-of-4">
+        col-2-of-4
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-1-of-4">
+          col-1-of-4
+        </div>
+        <div class="col-3-of-4">
+          col-3-of-4
+        </div>
+      </div> -->
+  </body>
+</html>
