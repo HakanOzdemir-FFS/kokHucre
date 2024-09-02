@@ -930,7 +930,7 @@ button.prev, button.next {
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p3 {
           top: 1rem;
-          left: 0;
+          left: -1rem;
           transform: scale(1.1); } }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
