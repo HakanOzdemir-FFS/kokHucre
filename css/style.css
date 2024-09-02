@@ -329,7 +329,6 @@ button.prev, button.next {
     display: inline-block; }
     @media only screen and (max-width: 56.25em) {
       .footer__navigation {
-        width: 100%;
         text-align: center; } }
   .footer__list {
     list-style: none;
