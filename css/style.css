@@ -204,11 +204,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
-    top: 0rem;
+    top: 4rem;
     left: 4rem; }
     @media only screen and (max-width: 37.5em) {
       .header__logo-box {
-        top: 4rem;
+        top: 0;
         left: 0;
         width: 100%;
         display: flex;
