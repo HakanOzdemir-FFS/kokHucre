@@ -790,11 +790,11 @@ button.prev, button.next {
     background-blend-mode: screen;
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
-    .card__picture--1 {
+    .card__picture--0 {
       background-image: linear-gradient(to right, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)), url(../../img/nat-5.jpg); }
-    .card__picture--2 {
+    .card__picture--1 {
       background-image: linear-gradient(to right, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)), url(../../img/nat-6.jpg); }
-    .card__picture--3 {
+    .card__picture--2 {
       background-image: linear-gradient(to right, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)), url(../../img/nat-7.jpg); }
   .card__heading {
     font-size: 3rem; }
@@ -812,11 +812,11 @@ button.prev, button.next {
       width: 70%;
       margin: 0 10%;
       clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%); }
-      .card__heading--span--1 {
+      .card__heading--span--0 {
         background-image: linear-gradient(to right, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
-      .card__heading--span--2 {
+      .card__heading--span--1 {
         background-image: linear-gradient(to right, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
-      .card__heading--span--3 {
+      .card__heading--span--2 {
         background-image: linear-gradient(to right, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
     padding: 3rem;
@@ -840,11 +840,11 @@ button.prev, button.next {
     color: #fff;
     width: 90%;
     text-align: center; }
-    .card__cta__btn--1 {
+    .card__cta__btn--0 {
       color: #ff7730; }
-    .card__cta__btn--2 {
+    .card__cta__btn--1 {
       color: #28b485; }
-    .card__cta__btn--3 {
+    .card__cta__btn--2 {
       color: #5643fa; }
   .card__price-box {
     margin-bottom: 6rem; }
