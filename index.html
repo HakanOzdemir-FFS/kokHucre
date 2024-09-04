@@ -292,26 +292,7 @@
             <script>
               document.getElementById('contactForm').addEventListener('submit', function (event) {
                 event.preventDefault();
-
-                // Form verilerini alın
-                const formData = new FormData(this);
-
-                // Fetch API ile formu gönderin
-                fetch('/', {
-                  method: 'POST',
-                  body: formData
-                }).then(response => {
-                  if (response.ok) {
-                    // Başarı mesajını göster
-                    document.querySelector('.form__success-message').style.display = 'block';
-                  } else {
-                    // Hata mesajını göster
-                    alert('Form gönderilirken bir hata oluştu.');
-                  }
-                }).catch(error => {
-                  // Hata mesajını göster
-                  alert('Form gönderilirken bir hata oluştu.');
-                });
+                document.querySelector('.form__success-message').style.display = 'block';
               });
 
             </script>
