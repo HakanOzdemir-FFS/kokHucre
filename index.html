@@ -290,11 +290,41 @@
               <p id="formError" style="color: red; display: none;">Form gönderilirken bir hata oluştu. ❌</p>
             </div>
             <script>
-              document.getElementById('contactForm').addEventListener('submit', function (event) {
+              const handleSubmit = (event) => {
                 event.preventDefault();
+
+                const myForm = event.target;
+                const formData = new FormData(myForm);
                 document.getElementById('formStatus').style.display = 'block';
-                document.getElementById('formSuccess').style.display = 'block';
-              });
+
+
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams(formData).toString(),
+                })
+                  .then(response => {
+                    if (response.ok) {
+                      // Başarı mesajını göster
+                      document.getElementById('formSuccess').style.display = 'block';
+
+                    } else {
+                      // Hata mesajını göster
+                      document.getElementById('formError').style.display = 'block';
+
+                    }
+                  })
+                  .catch((error) => {
+                    // Hata mesajını göster
+                    document.getElementById('formError').style.display = 'block';
+
+                  });
+              };
+
+              document
+                .querySelector("form")
+                .addEventListener("submit", handleSubmit);
+
 
             </script>
 
