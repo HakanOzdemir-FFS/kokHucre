@@ -221,7 +221,7 @@
                 BİLİNÇALTI ŞİFASI İLE GERÇEKLEŞEN MÜKEMMEL DEĞİŞİM
               </h3>
               <p>
-                Geçtiğimiz ay Kökten Şifa'dan bilinçaltı şifası hizmeti aldım ve deneyimim gerçekten hayat değiştirici oldu. Uzun zamandır kök çakramda yaşadığım tıkanıklık ve kök inançlarım nedeniyle birçok psikolojik sorun yaşıyordum. Ancak, theta healing seansları sayesinde bu sorunların kökenine inebildik. Şifalanma sürecinde aldığım destekle, geçmişteki travmalarım ve aile dizimi ile ilgili sorunlarım üzerinde büyük bir dönüşüm yaşadım.
+                Geçtiğimiz ay Kökten Şifa'dan bilinçaltı şifası hizmeti aldım ve deneyimim gerçekten hayat değiştirici oldu. Uzun zamandır kök çakramda yaşadığım tıkanıklık ve kök inançlarım nedeniyle birçok psikolojik sorun yaşıyordum. Ancak, kökten şifa seansları sayesinde bu sorunların kökenine inebildik. Şifalanma sürecinde aldığım destekle, geçmişteki travmalarım ve aile dizimi ile ilgili sorunlarım üzerinde büyük bir dönüşüm yaşadım.
               </p>
             </div>
           </div>
@@ -265,12 +265,12 @@
                         </div>
 
                         <div class="form__group">
-                          <input type="tel" class="form__input" placeholder="Telefon Numarası" id="phoneNumber" required maxlength="11"">
+                          <input type="tel" class="form__input" name="phoneNumber" placeholder="Telefon Numarası" id="phoneNumber" required maxlength="11"">
                           <label for="phoneNumber" class="form__label">Telefon Numarası</label>
                       </div>
 
                         <div class="form__group">
-                            <input type="email" class="form__input" placeholder="Mail Adresi" id="email" required>
+                            <input type="email" class="form__input" placeholder="Mail Adresi" id="email" name="email" required>
                             <label for="email" class="form__label">Mail Adresi</label>
                         </div>
 
@@ -299,31 +299,6 @@
                 </div>
             </div>
         </div>
-        <script>
-          document.getElementById('contactForm').addEventListener('submit', async (event) => {
-              event.preventDefault();
-              const formData = new FormData(event.target);
-              const data = {
-                  name: formData.get('name'),
-                  phoneNumber: formData.get('phoneNumber'),
-                  email: formData.get('email'),
-                  size: formData.get('size'),
-              };
-      
-              try {
-                  const response = await fetch('/.netlify/functions/send-email', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(data),
-                  });
-      
-                  const result = await response.json();
-                  alert(result.message || result.error);
-              } catch (error) {
-                  alert('Bir hata oluştu.');
-              }
-          });
-      </script>
     </section>
     </main>
 
@@ -356,7 +331,7 @@
         <div class="col-1-of-2">
           <div class="footer__navigation">
             <p class="footer__item">
-              Kökten Şifa, Theta Healing ve ruhsal şifa konusunda uzmanlaşmış bir eğitim platformudur. Bilinçaltı değişimi, frekans yükseltme, ve çakra dengeleme ile geçmiş travmalardan özgürleşmenize yardımcı oluyoruz. Numeroloji, aile dizimi ve ruhsal şifa yöntemleri ile anda dönüşüm ve şifalanma sağlıyoruz. Bioenerji, Reiki, meditasyon ve nefes egzersizleri gibi tekniklerle destek sunuyoruz. Atalardan aktarım ve kök inançlar ile ilgili çalışmalar yaparak mutlu bir psikolojiye ulaşmanıza yardımcı olmaktayız. Hipnoz ve büyüden kurtulma hizmetlerimizle de destek oluyoruz.
+              Kökten Şifa, Ruhsal şifa konusunda uzmanlaşmış bir eğitim platformudur. Bilinçaltı değişimi, frekans yükseltme, ve çakra dengeleme ile geçmiş travmalardan özgürleşmenize yardımcı oluyoruz. Numeroloji, aile dizimi ve ruhsal şifa yöntemleri ile anda dönüşüm ve şifalanma sağlıyoruz. Bioenerji, Reiki, meditasyon ve nefes egzersizleri gibi tekniklerle destek sunuyoruz. Atalardan aktarım ve kök inançlar ile ilgili çalışmalar yaparak mutlu bir psikolojiye ulaşmanıza yardımcı olmaktayız. Hipnoz ve büyüden kurtulma hizmetlerimizle de destek oluyoruz.
             </p>
             
           </div>
