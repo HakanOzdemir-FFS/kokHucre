@@ -120,7 +120,6 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
     var dateDifference = calculateDateDifference(certDate);
 
     try {
-      let certImage = null;
       
       if (file2) {
         certImage = certImageReader.result;
@@ -131,7 +130,7 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
         description: cardDescription,
         date: certDate,
         image: cardImage,
-        certImage: certImage,
+        imageCert: certImage,
         dateDifference: dateDifference,
         timestamp: new Date()
       });
@@ -174,6 +173,7 @@ async function loadCards() {
         <td>${card.description}</td>
         <td>${card.date}</td>
         <td><img src="${card.image}" alt="Card Image" style="width: 100px; height: auto;"></td>
+        <td><img src="${card.imageCert}" alt="Card Image" style="width: 100px; height: auto;"></td>
         <td><button class="delete-btn" data-id="${cardId}">Sil</button></td>
       `;
 
