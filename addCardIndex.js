@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Firestore'dan veriyi çekin
     const querySnapshot = await getDocs(collection(db, "cards"));
     const cards = querySnapshot.docs.map(doc => doc.data());
-    console.log(cards); // Verileri konsola yazdırın
 
     function createSlides(cards) {
       var slides = [];
