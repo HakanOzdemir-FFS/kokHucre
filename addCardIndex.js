@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     </div>
                   </div>
                   <div class="card__side card__side--back card__side--back-${j}">
-                  <div class="card__cert" style="background-image: url('${certImage}');">
+                  <div class="card__cert" style="background-image: url('${card.certImage}');">
                   </div>
                     <div class="card__cta">
                       <div class="card__price-box">
