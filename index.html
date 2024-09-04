@@ -252,7 +252,7 @@
         <div class="row">
             <div class="book">
                 <div class="book__form">
-                    <form action="https://formsubmit.co/koktensifa@gmail.com" method="POST" class="form">
+                    <form id="contactForm" action="https://formsubmit.co/koktensifa@gmail.com" method="POST" class="form">
                         <div class="u-margin-bottom-medium">
                             <h2 class="heading-secondary">
                               BİZİMLE İLETİŞİME GEÇİN
@@ -295,10 +295,16 @@
                         <div class="form__group">
                             <button class="btn btn--green">GÖNDER &rarr;</button>
                         </div>
+                        <div class="form__group">
+                          <div id="response" style="display:;">
+                            <iframe id="responseFrame" style="width: 80%; height: 200px; border: none;"></iframe>
+                        </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+        <script src="formPost.js"></script>
     </section>
     </main>
 
