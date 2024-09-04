@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <div class="card__cta">
                       <div class="card__price-box">
                         <p class="card__price-only">${card.title}</p>
-                        <p class="card__price-value">Geçen süre: ${dateDifference.years} yıl, ${dateDifference.months} ay, ${dateDifference.days} gün</p>
                       </div>
                       <a href="#section-book" class="btn btn--white card__cta__btn">Sen de Katıl!</a>
                     </div>
