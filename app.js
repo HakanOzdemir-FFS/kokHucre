@@ -117,14 +117,11 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
 
   cardImageReader.onloadend = async function () {
     var cardImage = cardImageReader.result;
+    var certImage = certImageReader.result;
+
     var dateDifference = calculateDateDifference(certDate);
 
     try {
-      
-      if (file2) {
-        certImage = certImageReader.result;
-      }
-
       await addDoc(collection(db, 'cards'), {
         title: cardName,
         description: cardDescription,
