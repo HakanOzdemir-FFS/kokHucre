@@ -1,17 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDoc,
-  deleteDoc,
-  doc,
-  getDocs,
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+import { getFirestore, collection, addDoc, getDoc, deleteDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-storage.js';
+
 
 // Firebase yapılandırması
 const firebaseConfig = {
@@ -20,7 +10,7 @@ const firebaseConfig = {
   projectId: "koktensifa-8b9d6",
   storageBucket: "koktensifa-8b9d6.appspot.com",
   messagingSenderId: "430082742734",
-  appId: "1:430082742734:web:e9f7e56af807b8ad56b39f",
+  appId: "1:430082742734:web:e9f7e56af807b8ad56b39f"
 };
 
 // Firebase'i başlat
@@ -41,20 +31,17 @@ async function checkPassword() {
       if (attemptCount >= MAX_ATTEMPTS) {
         console.log("Deneme hakkınız bitti.");
         alert("Deneme hakkınız bitti. Sayfa yüklenmeyecek.");
-        document.body.innerHTML =
-          "<h1>Deneme hakkınız bitti. Sayfa yüklenmedi.</h1>";
+        document.body.innerHTML = "<h1>Deneme hakkınız bitti. Sayfa yüklenmedi.</h1>";
         return;
       } else {
-        alert(
-          `İptal edildi. Kalan deneme hakkınız: ${MAX_ATTEMPTS - attemptCount}`
-        );
+        alert(`İptal edildi. Kalan deneme hakkınız: ${MAX_ATTEMPTS - attemptCount}`);
         continue;
       }
     }
 
     try {
       // Belirtilen konumdan veriyi al
-      const docRef = doc(db, "password", "2");
+      const docRef = doc(db, 'password', '2');
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
@@ -66,22 +53,17 @@ async function checkPassword() {
         } else {
           console.log("Şifre yanlış!");
           attemptCount++;
-          alert(
-            `Şifre yanlış! Kalan deneme hakkınız: ${
-              MAX_ATTEMPTS - attemptCount
-            }`
-          );
+          alert(`Şifre yanlış! Kalan deneme hakkınız: ${MAX_ATTEMPTS - attemptCount}`);
         }
       } else {
-        console.log("Şifre verisi bulunamadı");
-        alert("Şifre verisi bulunamadı.");
-        document.body.innerHTML =
-          "<h1>Şifre verisi bulunamadı. Sayfa yüklenmedi.</h1>";
+        console.log('Şifre verisi bulunamadı');
+        alert('Şifre verisi bulunamadı.');
+        document.body.innerHTML = "<h1>Şifre verisi bulunamadı. Sayfa yüklenmedi.</h1>";
         return;
       }
     } catch (error) {
-      console.error("Şifre doğrulama sırasında hata oluştu:", error);
-      alert("Şifre doğrulama sırasında bir hata oluştu.");
+      console.error('Şifre doğrulama sırasında hata oluştu:', error);
+      alert('Şifre doğrulama sırasında bir hata oluştu.');
       document.body.innerHTML = "<h1>Bir hata oluştu. Sayfa yüklenmedi.</h1>";
       return;
     }
@@ -94,76 +76,76 @@ async function checkPassword() {
 }
 
 // Kart ekleme işlevi
-document
-  .getElementById("create-card-btn")
-  .addEventListener("click", async function (event) {
-    event.preventDefault();
+document.getElementById("create-card-btn").addEventListener("click", async function (event) {
+  event.preventDefault();
 
-    const cardName = document.getElementById("card-name").value;
-    const cardDescription = document.getElementById("card-description").value;
-    const certDate = document.getElementById("cert-date").value;
-    const cardImageInput = document.getElementById("cardImage");
-    const certImageInput = document.getElementById("certImage");
+  const cardName = document.getElementById("card-name").value;
+  const cardDescription = document.getElementById("card-description").value;
+  const certDate = document.getElementById("cert-date").value;
+  const cardImageInput = document.getElementById("cardImage");
+  const certImageInput = document.getElementById("certImage");
 
-    const file = cardImageInput.files[0];
-    const file2 = certImageInput.files[0];
+  const file = cardImageInput.files[0];
+  const file2 = certImageInput.files[0];
 
-    const storage = getStorage();
-    const cardImageRef = ref(storage, "cardImages/" + file.name);
-    const certImageRef = ref(storage, "certImages/" + file2.name);
+  const storage = getStorage();
+  const cardImageRef = ref(storage, 'cardImages/' + file.name);
+  const certImageRef = ref(storage, 'certImages/' + file2.name);
 
-    try {
-      let cardImageUrl = "";
-      let certImageUrl = "";
+  try {
+    let cardImageUrl = '';
+    let certImageUrl = '';
 
-      // Kart fotoğrafını yükle
-      if (file) {
-        const cardSnapshot = await uploadBytes(cardImageRef, file);
-        cardImageUrl = await getDownloadURL(cardSnapshot.ref);
-      }
-
-      // Sertifika fotoğrafını yükle
-      if (file2) {
-        const certSnapshot = await uploadBytes(certImageRef, file2);
-        certImageUrl = await getDownloadURL(certSnapshot.ref);
-      }
-
-      const dateDifference = calculateDateDifference(certDate);
-
-      // Firestore'a kaydet
-      await addDoc(collection(db, "cards"), {
-        title: cardName,
-        description: cardDescription,
-        date: certDate,
-        image: cardImageUrl,
-        certImage: certImageUrl,
-        dateDifference: dateDifference,
-        timestamp: new Date(),
-      });
-
-      console.log("Kart başarıyla Firebase'e eklendi");
-      loadCards(); // Kartları yeniden yükle
-    } catch (error) {
-      console.error("Kart eklenirken hata oluştu:", error);
+    // Kart fotoğrafını yükle
+    if (file) {
+      const cardSnapshot = await uploadBytes(cardImageRef, file);
+      cardImageUrl = await getDownloadURL(cardSnapshot.ref);
     }
-  });
+
+    // Sertifika fotoğrafını yükle
+    if (file2) {
+      const certSnapshot = await uploadBytes(certImageRef, file2);
+      certImageUrl = await getDownloadURL(certSnapshot.ref);
+    }
+
+    const dateDifference = calculateDateDifference(certDate);
+
+    // Firestore'a kaydet
+    await addDoc(collection(db, 'cards'), {
+      title: cardName,
+      description: cardDescription,
+      date: certDate,
+      image: cardImageUrl,
+      certImage: certImageUrl,
+      dateDifference: dateDifference,
+      timestamp: new Date()
+    });
+
+    console.log('Kart başarıyla Firebase\'e eklendi');
+    loadCards(); // Kartları yeniden yükle
+
+  } catch (error) {
+    console.error('Kart eklenirken hata oluştu:', error);
+  }
+});
+
 
 // Kartları Firebase'den yükleyip tabloya ekleme işlevi
 async function loadCards() {
-  const cardsTableBody = document.querySelector("#cardsTable tbody");
+  const cardsTableBody = document.querySelector('#cardsTable tbody');
   if (!cardsTableBody) {
     console.error("cardsTableBody element not found!");
     return;
   }
 
   try {
-    const querySnapshot = await getDocs(collection(db, "cards"));
-    cardsTableBody.innerHTML = ""; // Önceki verileri temizle
+    const querySnapshot = await getDocs(collection(db, 'cards'));
+    cardsTableBody.innerHTML = ''; // Önceki verileri temizle
 
     querySnapshot.forEach((doc) => {
       const card = doc.data();
       const cardId = doc.id;
-      const row = document.createElement("tr");
+      const row = document.createElement('tr');
 
       row.innerHTML = `
         <td>${card.title}</td>
@@ -178,25 +160,25 @@ async function loadCards() {
     });
 
     // Silme butonlarına tıklama olayı ekle
-    document.querySelectorAll(".delete-btn").forEach((button) => {
-      button.addEventListener("click", async (event) => {
-        const cardId = event.target.getAttribute("data-id");
+    document.querySelectorAll('.delete-btn').forEach(button => {
+      button.addEventListener('click', async (event) => {
+        const cardId = event.target.getAttribute('data-id');
         try {
-          await deleteDoc(doc(db, "cards", cardId));
-          console.log("Kart başarıyla silindi");
+          await deleteDoc(doc(db, 'cards', cardId));
+          console.log('Kart başarıyla silindi');
           loadCards(); // Güncel kartları tekrar yükle
         } catch (error) {
-          console.error("Kart silinirken hata oluştu:", error);
+          console.error('Kart silinirken hata oluştu:', error);
         }
       });
     });
   } catch (error) {
-    console.error("Veriler çekilirken hata oluştu:", error);
+    console.error('Veriler çekilirken hata oluştu:', error);
   }
 }
 
 // Sayfa yüklendiğinde kartları yükle
-document.addEventListener("DOMContentLoaded", loadCards);
+document.addEventListener('DOMContentLoaded', loadCards);
 
 // Şifre kontrolünü başlat
 checkPassword();
