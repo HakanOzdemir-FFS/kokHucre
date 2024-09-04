@@ -49,6 +49,7 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
+  position: relative;
 }
 @media only screen and (max-width: 56.25em) {
   body {
@@ -1486,3 +1487,26 @@ button.next.next {
     width: 60%;
   }
 }
+
+.socialmedia{
+  display: none;
+}
+@media only screen and (max-width: 56.25em) {
+  .socialMedia{
+    display: block;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .socialMedia__icons-instagram__img, .socialMedia__icons-whatsapp__img {
+    width: 15rem;
+    height: 15rem;
+    margin: -3rem;
+  }
+}
+
+  
