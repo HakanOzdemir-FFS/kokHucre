@@ -108,7 +108,7 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
       certImageUrl = await getDownloadURL(certSnapshot.ref);
     }
 
-    const dateDifference = calculateDateDifference(certDate);
+    const dateDifference = card.dateDifference;
 
     // Firestore'a kaydet
     await addDoc(collection(db, 'cards'), {
@@ -152,7 +152,7 @@ async function loadCards() {
         <td>${card.description}</td>
         <td>${card.date}</td>
         <td><img src="${card.image}" alt="Card Image" style="width: 100px; height: auto;"></td>
-        <td><img src="${card.imageCert}" alt="Card Image" style="width: 100px; height: auto;"></td>
+        <td><img src="${card.certImage}" alt="Card Image" style="width: 100px; height: auto;"></td>
         <td><button class="delete-btn" data-id="${cardId}">Sil</button></td>
       `;
 
