@@ -1,410 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="css/icon-font.css" />
-    <!-- Firebase App (Ana SDK) -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<!-- Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-<!-- Firebase Auth (isteğe bağlı) -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-<script src="firebase.js"></script>
-<link rel="icon" href="img/thetaHealing3.png" type="image/png">
-    <title>Kökten Şifa</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__logo-box">
-        <img src="img/thetaHealing3.png" style="width: 15rem; height: auto;" alt="Logo" class="header__logo" />
-      </div>
-      <div class="header__text-box">
-        <h1 class="heading-primary">
-          <span class="heading-primary--main">KÖKTEN ŞİFA</span>
-          <span class="heading-primary--sub">GEÇMİŞ ATALARINI   <BR></BR>
-            ŞİMDİKİ AİLENİ ŞİFALANDIRIR</span>
-        </h1>
-        <a href="#section-certificate" class="btn btn--white">SERTİFİKA SAHİPLERİNİ KEŞFET</a>
-      </div>
-    </header>
 
-    <main>
-      <section class="section-about">
-        <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">
-            AYŞE ALTINTAŞ'IN BİLİNÇALTI İLE ŞİFA YOLU: PSİKOLOJİK VE FİZİKSEL SAĞLIKTA KÖKTEN DÖNÜŞÜM
-          </h2>
-        </div>
-        <div class="row">
-          <div class="col-1-of-2">
-            <h3 class="heading-tertiary u-margin-bottom-small">
-              KÖKTEN ŞİFA KURUCUSU KİMDİR?
-            </h3>
-            <p class="paragraph" name="description" content="Merhaba, ben AYŞE ALTINTAŞ. Kökten Şifa eğitiminin kurucusuyum. Psikolojik ve fiziksel hastalıklarımın yanında; hayat alanımda karşıma çıkan, ağır problemler yaşadığım bir hayatım vardı. Bu zorluklarla mücadele edecek gücümün kalmadığını hissettiğim zaman bu yaşadıklarımın bilinçaltı ile ilgili olduğunu fark ettim.  <br> Birçok araştırma yaptıktan sonra kainatın yaratıcısı ile hissel iletişim kurarak önce kendimi iyileştirdim, daha sonra bu mucizevi sistemi insanların kendi hayatlarına nasıl uygulayabileceğini öğretmeyi seçtim.">
-            Merhaba, ben <strong>AYŞE ALTINTAŞ</strong>. Kökten Şifa eğitiminin kurucusuyum. Psikolojik ve fiziksel hastalıklarımın yanında; hayat alanımda karşıma çıkan, ağır problemler yaşadığım bir hayatım vardı. Bu zorluklarla mücadele edecek gücümün kalmadığını hissettiğim zaman bu yaşadıklarımın bilinçaltı ile ilgili olduğunu fark ettim.  <br> Birçok araştırma yaptıktan sonra kainatın yaratıcısı ile hissel iletişim kurarak önce kendimi iyileştirdim, daha sonra bu mucizevi sistemi insanların kendi hayatlarına nasıl uygulayabileceğini öğretmeyi seçtim.
-            </p>
-            <a href="#section-book" class="btn-text">Daha Fazla &rarr;</a>
-          </div>
-          <div class="col-1-of-2">
-            <div class="composition">
-              <img
-                src="img/nat-1-large.jpg"
-                alt="Ayşe Altıntaş'ın şifa yöntemleri"
-                class="composition__photo composition__photo--p1"
-              />
-              <img
-                src="img/nat-2-large.jpg"
-                alt="Bilinçaltı ile şifa uygulamaları"
-                class="composition__photo composition__photo--p2"
-              />
-              <img
-                src="img/nat-3-large.jpg"
-                alt="Kökten şifa eğitimi"
-                class="composition__photo composition__photo--p3"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/icon-font.css" />
+  <!-- Firebase App (Ana SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <!-- Firebase Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <!-- Firebase Auth (isteğe bağlı) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="firebase.js"></script>
+  <link rel="icon" href="img/thetaHealing3.png" type="image/png">
+  <title>Kökten Şifa</title>
+</head>
 
-      <section class="section-features">
-        <div class="row">
-          <div class="col-1-of-4">
-            <div class="feature-box">
-              <i
-                class="feature-box__icon icon-basic-world u-margin-bottom-medium"
-              ></i>
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                KÖKTEN ŞİFA İLE BİLİNÇALTI ŞİFASI VE DÖNÜŞÜM
-              </h3>
-              <p class="feature-box__text">
-                Kökten Şifa, bilinçaltı frekanslarınızı değiştirerek kök çakranızdan 7. Kata kadar şifalanma sağlar. Bu teknik, ruhsal dönüşüm ve anda özgürleşme için idealdir.
-              </p>
-            </div>
-          </div>
+<body>
+  <header class="header">
+    <div class="header__logo-box">
+      <img src="img/thetaHealing3.png" style="width: 15rem; height: auto;" alt="Logo" class="header__logo" />
+    </div>
+    <div class="header__text-box">
+      <h1 class="heading-primary">
+        <span class="heading-primary--main">KÖKTEN ŞİFA</span>
+        <span class="heading-primary--sub">GEÇMİŞ ATALARINI <BR></BR>
+          ŞİMDİKİ AİLENİ ŞİFALANDIRIR</span>
+      </h1>
+      <a href="#section-certificate" class="btn btn--white">SERTİFİKA SAHİPLERİNİ KEŞFET</a>
+    </div>
+  </header>
 
-          <div class="col-1-of-4">
-            <div class="feature-box">
-              <i
-                class="feature-box__icon icon-basic-compass u-margin-bottom-medium"
-              ></i>
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                REİKİ VE MEDITASYON İLE ÇAKRALARINIZI DENGELEYİN
-              </h3>
-              <p class="feature-box__text">
-                Reiki ve meditasyon, kök çakranızdan başlayarak tüm çakralarınızı dengeler. Bu yöntemler, ruhsal şifa ve mutlu psikolojiye ulaşmanıza yardımcı olur.
-
-              </p>
-            </div>
-          </div>
-
-          <div class="col-1-of-4">
-            <div class="feature-box">
-              <i
-                class="feature-box__icon icon-basic-map u-margin-bottom-medium"
-              ></i>
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                NUMEROLOJİ VE AİLE DİZİMİ İLE ATALARDAN GELEN ENERJİ DÖNÜŞÜMÜ
-              </h3>
-              <p class="feature-box__text">
-                Numeroloji ve aile dizimi, atalardan gelen negatif enerjileri çözmenize yardımcı olur. Bu tekniklerle geçmişten özgürleşebilir ve ruhsal şifa bulabilirsiniz.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-1-of-4">
-            <div class="feature-box">
-              <i
-                class="feature-box__icon icon-basic-heart u-margin-bottom-medium"
-              ></i>
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                NEFES EGZERSİZİ VE HİPNOZ İLE PSİKOLOJİK TRAVMA ŞİFASI
-              </h3>
-              <p class="feature-box__text">
-                Nefes egzersizi ve hipnoz, psikolojik travmaları şifalandırarak kök inançlarınızı dönüştürür. Bu yöntemlerle çocukluk travmalarından ve büyüden arınabilirsiniz.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section section class="section-tours" id="section-certificate">
-        
-        
-        <div class="u-center-text u-margin-bottom-small">
-          <h2 class="heading-secondary">SERTİFİKA SAHİPLERİ</h2>
-        </div>
-        <div class="row__filter--Row">
-          <div class="u-center-text u-margin-bottom-medium card__filter">
-            <h3 class="u-margin-bottom-small">Filtrele</h3>
-            <div>
-              <ul>
-                <li>
-                  <input
-                  type="text"
-                  placeholder="Ad Soyad"
-                  id="card-name"
-                  class="form__input"
-                  required
-                />
-                <label for="card-name" class="form__label">Ad Soyad</label>
-                </li>
-                <li>
-                  <div class="form__group">
-                    <input
-                      type="text"
-                      placeholder="Şehir"
-                      id="card-description"
-                      class="form__input"
-                      required
-                    />
-                    <label for="card-description" class="form__label"
-                      >Şehir</label
-                    >
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row row__slider-Row u-margin-bottom-small">
-          
-            <div class="slider">
-             
-
-
-              
-            </div>
-          <!-- Buraya JavaScript ile oluşturulacak kartlar eklenecek -->
-           
-           
-          </label>
-
-        </div>
-        <div class="row__slider--buttons">
-          <label class="btn__slide btn__slide--left  prevSlider">
-            <span class="btn__slide--arrow btn__slide__arrow--right btn__slide__arrow">&larr;</span>
-          </label>
-          <label class="btn__slide btn__slide--right nextSlider nextSlider">
-            <span class="btn__slide--arrow btn__slide__arrow btn__slide__arrow--left">&rarr;</span>
-         </div>
-      </section>
-      <script type="module" src="addCardIndex.js"></script>
-
-      <section class="section-stories">
-        <div class="bg-video">
-          <video class="bg-video__content" autoplay loop muted>
-            <source src="img/video.mp4" type="video/mp4" />
-            <source src="img/video.webm" type="video/webm" />
-            Your browser not sported video.
-          </video>
-        </div>
-
-        <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">RUHSAL ŞİFA İLE ÇOCUKLUK TRAVMALARINI İYİLEŞTİRİN</h2>
-        </div>
-
-        <div class="row">
-          <div class="story">
-            <figure class="story__shape">
-              <img src="img/nat-8.jpg" alt="phto" class="story__img" />
-              <figcaption class="story__caption">Yeliz Cansu</figcaption>
-            </figure>
-            <div class="story__text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                BİLİNÇALTI ŞİFASI İLE GERÇEKLEŞEN MÜKEMMEL DEĞİŞİM
-              </h3>
-              <p>
-                Geçtiğimiz ay Kökten Şifa'dan bilinçaltı şifası hizmeti aldım ve deneyimim gerçekten hayat değiştirici oldu. Uzun zamandır kök çakramda yaşadığım tıkanıklık ve kök inançlarım nedeniyle birçok psikolojik sorun yaşıyordum. Ancak, kökten şifa seansları sayesinde bu sorunların kökenine inebildik. Şifalanma sürecinde aldığım destekle, geçmişteki travmalarım ve aile dizimi ile ilgili sorunlarım üzerinde büyük bir dönüşüm yaşadım.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="story">
-            <figure class="story__shape">
-              <img src="img/nat-9.jpg" alt="phto" class="story__img" />
-              <figcaption class="story__caption">Hakan Aktaş</figcaption>
-            </figure>
-            <div class="story__text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                REİKİ VE ÇAKRA DENGELEME İLE YENİDEN DOĞUŞ
-              </h3>
-              <p>
-                Kökten Şifa'dan reiki ve çakra dengeleme hizmeti aldım ve bu deneyim beni gerçekten derinden etkiledi. Uzun zamandır çakralarımdaki dengesizlikler ve enerji blokajları yüzünden sürekli yorgun ve stresli hissediyordum. Şifacılarının uyguladığı reiki ve bioenerji teknikleri sayesinde bu sorunları kökünden çözdüm.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="u-center-text u-margin-top-huge">
-          <a href="#" class="btn-text">Tüm Yorumları Gör &rarr;</a>
-        </div>
-      </section>
-
-      <section id="section-book" class="section-book">
-        <div class="row">
-            <div class="book">
-                <div class="book__form">
-                    <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form" netlify-honeypot="bot-field"">
-                        <div class="u-margin-bottom-medium">
-                            <h2 class="heading-secondary">
-                              BİZİMLE İLETİŞİME GEÇİN
-                            </h2>
-                        </div>
-
-                        <div class="form__group">
-                            <input type="text" name="Ad Soyad" class="form__input" placeholder="Ad Soyad" id="name" required>
-                            <label for="name" class="form__label">Ad Soyad</label>
-                        </div>
-
-                        <div class="form__group">
-                          <input type="tel" class="form__input" name="Telefon Numarası" placeholder="Telefon Numarası" id="phoneNumber" required maxlength="11"">
-                          <label for="phoneNumber" class="form__label">Telefon Numarası</label>
-                      </div>
-
-                        <div class="form__group">
-                            <input type="email" class="form__input" placeholder="Mail Adresi" id="email" name="E-posta" required>
-                            <label for="email" class="form__label">Mail Adresi</label>
-                        </div>
-
-                        <div class="form__group u-margin-bottom-medium">
-                            <div class="form__radio-group">
-                                <input type="radio" class="form__radio-input" id="small" name="Talep" value="Seans">
-                                <label for="small" class="form__radio-label">
-                                    <span class="form__radio-button"></span>
-                                    Seans
-                                </label>
-                            </div>
-
-                            <div class="form__radio-group">
-                                <input type="radio" class="form__radio-input" id="large" name="Talep" value="Eğitim">
-                                <label for="large" class="form__radio-label">
-                                    <span class="form__radio-button"></span>
-                                    Eğitim
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form__group">
-                            <button class="btn btn--green">GÖNDER &rarr;</button>
-                            <div id="formStatus" style="display:none;">
-                              <p id="formSuccess" style="color: green; display: none;">Form başarıyla gönderildi! ✔️</p>
-                              <p id="formError" style="color: red; display: none;">Form gönderilirken bir hata oluştu. ❌</p>
-                          </div>
-                          <script>
-                            document.addEventListener('DOMContentLoaded', function() {
-                                const form = document.getElementById('contactForm');
-                                const formStatus = document.getElementById('formStatus');
-                                const formSuccess = document.getElementById('formSuccess');
-                                const formError = document.getElementById('formError');
-                            
-                                form.addEventListener('submit', function(event) {
-                                    event.preventDefault(); // Formun normal gönderimini engeller
-                            
-                                    fetch(form.action, {
-                                        method: 'POST',
-                                        body: new FormData(form)
-                                    })
-                                    .then(response => {
-                                        if (response.ok) {
-                                            formSuccess.style.display = 'block';
-                                            formError.style.display = 'none';
-                                            form.reset(); // Formu sıfırla
-                                        } else {
-                                            formSuccess.style.display = 'none';
-                                            formError.style.display = 'block';
-                                        }
-                                    })
-                                    .catch(error => {
-                                        formSuccess.style.display = 'none';
-                                        formError.style.display = 'block';
-                                    });
-                                });
-                            });
-                            </script>
-                            
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-      
-    </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__logo-box">
-        <img src="img/thetaHealing3.png" alt="Kökten Şifa Logo" class="footer__logo" />
+  <main>
+    <section class="section-about">
+      <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">
+          AYŞE ALTINTAŞ'IN BİLİNÇALTI İLE ŞİFA YOLU: PSİKOLOJİK VE FİZİKSEL SAĞLIKTA KÖKTEN DÖNÜŞÜM
+        </h2>
       </div>
       <div class="row">
         <div class="col-1-of-2">
-          <ul class="footer__list">
-            <div class="footer__navigation">
-              <li class="footer__item">
-                <a class="footer__link" href="#">Ana Sayfa</a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link" href="#">İletişim</a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link" href="#">Kariyer</a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link" href="#">Gizlilik Politikası</a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link" href="#">Şartlar ve Koşullar</a>
-              </li>
-            </div>
-          </ul>
-        </div>
-        <div class="col-1-of-2">
-          <div class="footer__navigation">
-            <p class="footer__item">
-              Kökten Şifa, Ruhsal şifa konusunda uzmanlaşmış bir eğitim platformudur. Bilinçaltı değişimi, frekans yükseltme, ve çakra dengeleme ile geçmiş travmalardan özgürleşmenize yardımcı oluyoruz. Numeroloji, aile dizimi ve ruhsal şifa yöntemleri ile anda dönüşüm ve şifalanma sağlıyoruz. Bioenerji, Reiki, meditasyon ve nefes egzersizleri gibi tekniklerle destek sunuyoruz. Atalardan aktarım ve kök inançlar ile ilgili çalışmalar yaparak mutlu bir psikolojiye ulaşmanıza yardımcı olmaktayız. Hipnoz ve büyüden kurtulma hizmetlerimizle de destek oluyoruz.
-            </p>
-            
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <p class="footer__item footer__item--center">
-          <a class="footer__link" href="#">Kökten Şifa</a>, <a class="footer__link" href="#">Bilinçaltı</a>, <a class="footer__link" href="#">Frekans</a>, <a class="footer__link" href="#">Çakra</a>, <a class="footer__link" href="#">Kök Çakra</a>, <a class="footer__link" href="#">Şifa</a>, <a class="footer__link" href="#">Numeroloji</a>, <a class="footer__link" href="#">Aile Dizimi</a>, <a class="footer__link" href="#">Ruhsal Şifa</a>, <a class="footer__link" href="#">Geçmişte Özgürleşmek</a>, <a class="footer__link" href="#">Atalardan Aktarım</a>, <a class="footer__link" href="#">Anda Şifalanma</a>, <a class="footer__link" href="#">Anda Dönüşüm</a>, <a class="footer__link" href="#">Bioenerji</a>, <a class="footer__link" href="#">Reiki</a>, <a class="footer__link" href="#">Meditasyon ile Şifa</a>, <a class="footer__link" href="#">Kök İnanç</a>, <a class="footer__link" href="#">Psikolojik Travma</a>, <a class="footer__link" href="#">Çocukluk Travması</a>, <a class="footer__link" href="#">Nefes Egzersizi</a>, <a class="footer__link" href="#">Hipnoz</a>, <a class="footer__link" href="#">Büyüden Kurtulma</a>, <a class="footer__link" href="#">Negatif Varlıklardan Kurtulma</a>, <a class="footer__link" href="#">Çakralar</a>.
-        </p>
-      </div>
-    </footer>
-
-    <div class="popup" id="popup">
-      <div class="popup__content">
-        <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="a" class="popup__img" />
-          <img src="img/nat-9.jpg" alt="a" class="popup__img" />
-        </div>
-        <div class="popup__right">
-          <a href="#section-tours" class="popup__close">&times;</a>
-          <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
           <h3 class="heading-tertiary u-margin-bottom-small">
-            Important &ndash; Please read these terms before booking
+            KÖKTEN ŞİFA KURUCUSU KİMDİR?
           </h3>
-          <p class="popup__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
-            deserunt eligendi repudiandae nemo culpa esse ullam alias officiis
-            fugiat, consequatur illo quae nostrum quaerat! Nisi rerum ducimus a
-            cumque consequatur. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Qui iusto excepturi rem perferendis fugit, at
-            officia earum, soluta dignissimos dolore exercitationem obcaecati
-            eveniet hic ratione deserunt quis eaque praesentium similique.
+          <p class="paragraph" name="description"
+            content="Merhaba, ben AYŞE ALTINTAŞ. Kökten Şifa eğitiminin kurucusuyum. Psikolojik ve fiziksel hastalıklarımın yanında; hayat alanımda karşıma çıkan, ağır problemler yaşadığım bir hayatım vardı. Bu zorluklarla mücadele edecek gücümün kalmadığını hissettiğim zaman bu yaşadıklarımın bilinçaltı ile ilgili olduğunu fark ettim.  <br> Birçok araştırma yaptıktan sonra kainatın yaratıcısı ile hissel iletişim kurarak önce kendimi iyileştirdim, daha sonra bu mucizevi sistemi insanların kendi hayatlarına nasıl uygulayabileceğini öğretmeyi seçtim.">
+            Merhaba, ben <strong>AYŞE ALTINTAŞ</strong>. Kökten Şifa eğitiminin kurucusuyum. Psikolojik ve fiziksel
+            hastalıklarımın yanında; hayat alanımda karşıma çıkan, ağır problemler yaşadığım bir hayatım vardı. Bu
+            zorluklarla mücadele edecek gücümün kalmadığını hissettiğim zaman bu yaşadıklarımın bilinçaltı ile ilgili
+            olduğunu fark ettim. <br> Birçok araştırma yaptıktan sonra kainatın yaratıcısı ile hissel iletişim kurarak
+            önce kendimi iyileştirdim, daha sonra bu mucizevi sistemi insanların kendi hayatlarına nasıl
+            uygulayabileceğini öğretmeyi seçtim.
           </p>
-          <a href="#" class="btn btn--green">Book Now!</a>
+          <a href="#section-book" class="btn-text">Daha Fazla &rarr;</a>
+        </div>
+        <div class="col-1-of-2">
+          <div class="composition">
+            <img src="img/nat-1-large.jpg" alt="Ayşe Altıntaş'ın şifa yöntemleri"
+              class="composition__photo composition__photo--p1" />
+            <img src="img/nat-2-large.jpg" alt="Bilinçaltı ile şifa uygulamaları"
+              class="composition__photo composition__photo--p2" />
+            <img src="img/nat-3-large.jpg" alt="Kökten şifa eğitimi"
+              class="composition__photo composition__photo--p3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-features">
+      <div class="row">
+        <div class="col-1-of-4">
+          <div class="feature-box">
+            <i class="feature-box__icon icon-basic-world u-margin-bottom-medium"></i>
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              KÖKTEN ŞİFA İLE BİLİNÇALTI ŞİFASI VE DÖNÜŞÜM
+            </h3>
+            <p class="feature-box__text">
+              Kökten Şifa, bilinçaltı frekanslarınızı değiştirerek kök çakranızdan 7. Kata kadar şifalanma sağlar. Bu
+              teknik, ruhsal dönüşüm ve anda özgürleşme için idealdir.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-1-of-4">
+          <div class="feature-box">
+            <i class="feature-box__icon icon-basic-compass u-margin-bottom-medium"></i>
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              REİKİ VE MEDITASYON İLE ÇAKRALARINIZI DENGELEYİN
+            </h3>
+            <p class="feature-box__text">
+              Reiki ve meditasyon, kök çakranızdan başlayarak tüm çakralarınızı dengeler. Bu yöntemler, ruhsal şifa ve
+              mutlu psikolojiye ulaşmanıza yardımcı olur.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="col-1-of-4">
+          <div class="feature-box">
+            <i class="feature-box__icon icon-basic-map u-margin-bottom-medium"></i>
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              NUMEROLOJİ VE AİLE DİZİMİ İLE ATALARDAN GELEN ENERJİ DÖNÜŞÜMÜ
+            </h3>
+            <p class="feature-box__text">
+              Numeroloji ve aile dizimi, atalardan gelen negatif enerjileri çözmenize yardımcı olur. Bu tekniklerle
+              geçmişten özgürleşebilir ve ruhsal şifa bulabilirsiniz.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-1-of-4">
+          <div class="feature-box">
+            <i class="feature-box__icon icon-basic-heart u-margin-bottom-medium"></i>
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              NEFES EGZERSİZİ VE HİPNOZ İLE PSİKOLOJİK TRAVMA ŞİFASI
+            </h3>
+            <p class="feature-box__text">
+              Nefes egzersizi ve hipnoz, psikolojik travmaları şifalandırarak kök inançlarınızı dönüştürür. Bu
+              yöntemlerle çocukluk travmalarından ve büyüden arınabilirsiniz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section section class="section-tours" id="section-certificate">
+
+
+      <div class="u-center-text u-margin-bottom-small">
+        <h2 class="heading-secondary">SERTİFİKA SAHİPLERİ</h2>
+      </div>
+      <div class="row__filter--Row">
+        <div class="u-center-text u-margin-bottom-medium card__filter">
+          <h3 class="u-margin-bottom-small">Filtrele</h3>
+          <div>
+            <ul>
+              <li>
+                <input type="text" placeholder="Ad Soyad" id="card-name" class="form__input" required />
+                <label for="card-name" class="form__label">Ad Soyad</label>
+              </li>
+              <li>
+                <div class="form__group">
+                  <input type="text" placeholder="Şehir" id="card-description" class="form__input" required />
+                  <label for="card-description" class="form__label">Şehir</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row__slider-Row u-margin-bottom-small">
+
+        <div class="slider">
+
+
+
+
+        </div>
+        <!-- Buraya JavaScript ile oluşturulacak kartlar eklenecek -->
+
+
+        </label>
+
+      </div>
+      <div class="row__slider--buttons">
+        <label class="btn__slide btn__slide--left  prevSlider">
+          <span class="btn__slide--arrow btn__slide__arrow--right btn__slide__arrow">&larr;</span>
+        </label>
+        <label class="btn__slide btn__slide--right nextSlider nextSlider">
+          <span class="btn__slide--arrow btn__slide__arrow btn__slide__arrow--left">&rarr;</span>
+      </div>
+    </section>
+    <script type="module" src="addCardIndex.js"></script>
+
+    <section class="section-stories">
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay loop muted>
+          <source src="img/video.mp4" type="video/mp4" />
+          <source src="img/video.webm" type="video/webm" />
+          Your browser not sported video.
+        </video>
+      </div>
+
+      <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">RUHSAL ŞİFA İLE ÇOCUKLUK TRAVMALARINI İYİLEŞTİRİN</h2>
+      </div>
+
+      <div class="row">
+        <div class="story">
+          <figure class="story__shape">
+            <img src="img/nat-8.jpg" alt="phto" class="story__img" />
+            <figcaption class="story__caption">Yeliz Cansu</figcaption>
+          </figure>
+          <div class="story__text">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              BİLİNÇALTI ŞİFASI İLE GERÇEKLEŞEN MÜKEMMEL DEĞİŞİM
+            </h3>
+            <p>
+              Geçtiğimiz ay Kökten Şifa'dan bilinçaltı şifası hizmeti aldım ve deneyimim gerçekten hayat değiştirici
+              oldu. Uzun zamandır kök çakramda yaşadığım tıkanıklık ve kök inançlarım nedeniyle birçok psikolojik sorun
+              yaşıyordum. Ancak, kökten şifa seansları sayesinde bu sorunların kökenine inebildik. Şifalanma sürecinde
+              aldığım destekle, geçmişteki travmalarım ve aile dizimi ile ilgili sorunlarım üzerinde büyük bir dönüşüm
+              yaşadım.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="story">
+          <figure class="story__shape">
+            <img src="img/nat-9.jpg" alt="phto" class="story__img" />
+            <figcaption class="story__caption">Hakan Aktaş</figcaption>
+          </figure>
+          <div class="story__text">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              REİKİ VE ÇAKRA DENGELEME İLE YENİDEN DOĞUŞ
+            </h3>
+            <p>
+              Kökten Şifa'dan reiki ve çakra dengeleme hizmeti aldım ve bu deneyim beni gerçekten derinden etkiledi.
+              Uzun zamandır çakralarımdaki dengesizlikler ve enerji blokajları yüzünden sürekli yorgun ve stresli
+              hissediyordum. Şifacılarının uyguladığı reiki ve bioenerji teknikleri sayesinde bu sorunları kökünden
+              çözdüm.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="u-center-text u-margin-top-huge">
+        <a href="#" class="btn-text">Tüm Yorumları Gör &rarr;</a>
+      </div>
+    </section>
+
+    <section id="section-book" class="section-book">
+      <div class="row">
+        <div class="book">
+          <div class="book__form">
+            <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form"
+              netlify-honeypot="bot-field"">
+                        <div class=" u-margin-bottom-medium">
+              <h2 class="heading-secondary">
+                BİZİMLE İLETİŞİME GEÇİN
+              </h2>
+          </div>
+
+          <div class="form__group">
+            <input type="text" name="Ad Soyad" class="form__input" placeholder="Ad Soyad" id="name" required>
+            <label for="name" class="form__label">Ad Soyad</label>
+          </div>
+
+          <div class="form__group">
+            <input type="tel" class="form__input" name="Telefon Numarası" placeholder="Telefon Numarası"
+              id="phoneNumber" required maxlength="11"">
+                          <label for=" phoneNumber" class="form__label">Telefon Numarası</label>
+          </div>
+
+          <div class="form__group">
+            <input type="email" class="form__input" placeholder="Mail Adresi" id="email" name="E-posta" required>
+            <label for="email" class="form__label">Mail Adresi</label>
+          </div>
+
+          <div class="form__group u-margin-bottom-medium">
+            <div class="form__radio-group">
+              <input type="radio" class="form__radio-input" id="small" name="Talep" value="Seans">
+              <label for="small" class="form__radio-label">
+                <span class="form__radio-button"></span>
+                Seans
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <input type="radio" class="form__radio-input" id="large" name="Talep" value="Eğitim">
+              <label for="large" class="form__radio-label">
+                <span class="form__radio-button"></span>
+                Eğitim
+              </label>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <button class="btn btn--green">GÖNDER &rarr;</button>
+            <div id="formStatus" style="display:none;">
+              <p id="formSuccess" style="color: green; display: none;">Form başarıyla gönderildi! ✔️</p>
+              <p id="formError" style="color: red; display: none;">Form gönderilirken bir hata oluştu. ❌</p>
+            </div>
+            <script>
+              document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Form verilerini alın
+                const formData = new FormData(this);
+
+                // Fetch API ile formu gönderin
+                fetch('/', {
+                  method: 'POST',
+                  body: formData
+                }).then(response => {
+                  if (response.ok) {
+                    // Başarı mesajını göster
+                    document.querySelector('.form__success-message').style.display = 'block';
+                  } else {
+                    // Hata mesajını göster
+                    alert('Form gönderilirken bir hata oluştu.');
+                  }
+                }).catch(error => {
+                  // Hata mesajını göster
+                  alert('Form gönderilirken bir hata oluştu.');
+                });
+              });
+
+            </script>
+
+          </div>
+          </form>
+        </div>
+      </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo-box">
+      <img src="img/thetaHealing3.png" alt="Kökten Şifa Logo" class="footer__logo" />
+    </div>
+    <div class="row">
+      <div class="col-1-of-2">
+        <ul class="footer__list">
+          <div class="footer__navigation">
+            <li class="footer__item">
+              <a class="footer__link" href="#">Ana Sayfa</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">İletişim</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Kariyer</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Gizlilik Politikası</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Şartlar ve Koşullar</a>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="col-1-of-2">
+        <div class="footer__navigation">
+          <p class="footer__item">
+            Kökten Şifa, Ruhsal şifa konusunda uzmanlaşmış bir eğitim platformudur. Bilinçaltı değişimi, frekans
+            yükseltme, ve çakra dengeleme ile geçmiş travmalardan özgürleşmenize yardımcı oluyoruz. Numeroloji, aile
+            dizimi ve ruhsal şifa yöntemleri ile anda dönüşüm ve şifalanma sağlıyoruz. Bioenerji, Reiki, meditasyon ve
+            nefes egzersizleri gibi tekniklerle destek sunuyoruz. Atalardan aktarım ve kök inançlar ile ilgili
+            çalışmalar yaparak mutlu bir psikolojiye ulaşmanıza yardımcı olmaktayız. Hipnoz ve büyüden kurtulma
+            hizmetlerimizle de destek oluyoruz.
+          </p>
+
         </div>
       </div>
     </div>
-  </body>
+    <div class="row">
+      <p class="footer__item footer__item--center">
+        <a class="footer__link" href="#">Kökten Şifa</a>, <a class="footer__link" href="#">Bilinçaltı</a>, <a
+          class="footer__link" href="#">Frekans</a>, <a class="footer__link" href="#">Çakra</a>, <a class="footer__link"
+          href="#">Kök Çakra</a>, <a class="footer__link" href="#">Şifa</a>, <a class="footer__link"
+          href="#">Numeroloji</a>, <a class="footer__link" href="#">Aile Dizimi</a>, <a class="footer__link"
+          href="#">Ruhsal Şifa</a>, <a class="footer__link" href="#">Geçmişte Özgürleşmek</a>, <a class="footer__link"
+          href="#">Atalardan Aktarım</a>, <a class="footer__link" href="#">Anda Şifalanma</a>, <a class="footer__link"
+          href="#">Anda Dönüşüm</a>, <a class="footer__link" href="#">Bioenerji</a>, <a class="footer__link"
+          href="#">Reiki</a>, <a class="footer__link" href="#">Meditasyon ile Şifa</a>, <a class="footer__link"
+          href="#">Kök İnanç</a>, <a class="footer__link" href="#">Psikolojik Travma</a>, <a class="footer__link"
+          href="#">Çocukluk Travması</a>, <a class="footer__link" href="#">Nefes Egzersizi</a>, <a class="footer__link"
+          href="#">Hipnoz</a>, <a class="footer__link" href="#">Büyüden Kurtulma</a>, <a class="footer__link"
+          href="#">Negatif Varlıklardan Kurtulma</a>, <a class="footer__link" href="#">Çakralar</a>.
+      </p>
+    </div>
+  </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup__content">
+      <div class="popup__left">
+        <img src="img/nat-8.jpg" alt="a" class="popup__img" />
+        <img src="img/nat-9.jpg" alt="a" class="popup__img" />
+      </div>
+      <div class="popup__right">
+        <a href="#section-tours" class="popup__close">&times;</a>
+        <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+        <h3 class="heading-tertiary u-margin-bottom-small">
+          Important &ndash; Please read these terms before booking
+        </h3>
+        <p class="popup__text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
+          deserunt eligendi repudiandae nemo culpa esse ullam alias officiis
+          fugiat, consequatur illo quae nostrum quaerat! Nisi rerum ducimus a
+          cumque consequatur. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Qui iusto excepturi rem perferendis fugit, at
+          officia earum, soluta dignissimos dolore exercitationem obcaecati
+          eveniet hic ratione deserunt quis eaque praesentium similique.
+        </p>
+        <a href="#" class="btn btn--green">Book Now!</a>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
