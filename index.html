@@ -241,8 +241,8 @@
       <div class="row">
         <div class="book">
           <div class="book__form">
-            <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form" action="/"
-              netlify-honeypot="bot-field"">
+            <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form"
+              action="https://formsubmit.co/koktensifa@gmail.com" netlify-honeypot="bot-field"">
                         <div class=" u-margin-bottom-medium">
               <h2 class="heading-secondary">
                 BİZİMLE İLETİŞİME GEÇİN
@@ -289,45 +289,6 @@
               <p id="formSuccess" style="color: green; display: none;">Form başarıyla gönderildi! ✔️</p>
               <p id="formError" style="color: red; display: none;">Form gönderilirken bir hata oluştu. ❌</p>
             </div>
-            <script>
-              const handleSubmit = (event) => {
-                event.preventDefault();
-
-                const myForm = event.target;
-                const formData = new FormData(myForm);
-                document.getElementById('formStatus').style.display = 'block';
-
-
-                fetch("/", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body: new URLSearchParams(formData).toString(),
-                })
-                  .then(response => {
-                    if (response.ok) {
-                      // Başarı mesajını göster
-                      document.getElementById('formSuccess').style.display = 'block';
-
-                    } else {
-                      // Hata mesajını göster
-                      document.getElementById('formError').style.display = 'block';
-
-                    }
-                  })
-                  .catch((error) => {
-                    // Hata mesajını göster
-                    document.getElementById('formError').style.display = 'block';
-
-                  });
-              };
-
-              document
-                .querySelector("form")
-                .addEventListener("submit", handleSubmit);
-
-
-            </script>
-
           </div>
           </form>
         </div>
