@@ -836,7 +836,6 @@ button.prev, button.next {
   .card__cert {
     width: 100%;
     height: 50%;
-    background-color: red;
   }
   .card__cta {
     position: absolute;
