@@ -85,7 +85,6 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
 
   var file = cardImageInput.files[0];
   var file2 = certImageInput.files[0];
-  var reader = new FileReader();
 
   function calculateDateDifference(startDate) {
     const today = new Date();
@@ -113,12 +112,20 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
     };
   }
 
-  reader.onloadend = async function () {
-    var cardImage = reader.result;
-    var certImage = reader.result;
+  var cardImageReader = new FileReader();
+  var certImageReader = new FileReader();
+
+  cardImageReader.onloadend = async function () {
+    var cardImage = cardImageReader.result;
     var dateDifference = calculateDateDifference(certDate);
 
     try {
+      let certImage = null;
+      
+      if (file2) {
+        certImage = certImageReader.result;
+      }
+
       await addDoc(collection(db, 'cards'), {
         title: cardName,
         description: cardDescription,
@@ -135,12 +142,15 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
     }
   };
 
-  if (file || file2) {
-    reader.readAsDataURL(file);
-  } else {
-    console.error("No file selected.");
+  if (file) {
+    cardImageReader.readAsDataURL(file);
+  }
+
+  if (file2) {
+    certImageReader.readAsDataURL(file2);
   }
 });
+
 
 // Kartları Firebase'den yükleyip tabloya ekleme işlevi
 async function loadCards() {
