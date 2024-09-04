@@ -252,7 +252,7 @@
         <div class="row">
             <div class="book">
                 <div class="book__form">
-                    <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form" netlify-honeypot="bot-field" action="/success">
+                    <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form" netlify-honeypot="bot-field"">
                         <div class="u-margin-bottom-medium">
                             <h2 class="heading-secondary">
                               BİZİMLE İLETİŞİME GEÇİN
@@ -294,6 +294,42 @@
 
                         <div class="form__group">
                             <button class="btn btn--green">GÖNDER &rarr;</button>
+                            <div id="formStatus" style="display:none;">
+                              <p id="formSuccess" style="color: green; display: none;">Form başarıyla gönderildi! ✔️</p>
+                              <p id="formError" style="color: red; display: none;">Form gönderilirken bir hata oluştu. ❌</p>
+                          </div>
+                          <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const form = document.getElementById('contactForm');
+                                const formStatus = document.getElementById('formStatus');
+                                const formSuccess = document.getElementById('formSuccess');
+                                const formError = document.getElementById('formError');
+                            
+                                form.addEventListener('submit', function(event) {
+                                    event.preventDefault(); // Formun normal gönderimini engeller
+                            
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        body: new FormData(form)
+                                    })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            formSuccess.style.display = 'block';
+                                            formError.style.display = 'none';
+                                            form.reset(); // Formu sıfırla
+                                        } else {
+                                            formSuccess.style.display = 'none';
+                                            formError.style.display = 'block';
+                                        }
+                                    })
+                                    .catch(error => {
+                                        formSuccess.style.display = 'none';
+                                        formError.style.display = 'block';
+                                    });
+                                });
+                            });
+                            </script>
+                            
                         </div>
                     </form>
                 </div>
