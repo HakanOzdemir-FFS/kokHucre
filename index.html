@@ -252,7 +252,7 @@
         <div class="row">
             <div class="book">
                 <div class="book__form">
-                    <form id="contactForm" action="https://getform.io/f/apjmvdma" method="POST" class="form">
+                    <form name="contact" id="contactForm" data-netlify="true" method="POST" class="form" netlify-honeypot="bot-field" action="/success">
                         <div class="u-margin-bottom-medium">
                             <h2 class="heading-secondary">
                               BİZİMLE İLETİŞİME GEÇİN
@@ -295,36 +295,10 @@
                         <div class="form__group">
                             <button class="btn btn--green">GÖNDER &rarr;</button>
                         </div>
-                        <div class="form__group">
-                          <div id="response" style="display:none;">
-                            <iframe id="responseFrame" style="width: 80%; height: 200px; border: none;"></iframe>
-                        </div>
-                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        <script>
-          document.getElementById('contactForm').addEventListener('submit', function(event) {
-              event.preventDefault(); // Formun sayfayı yenilemesini engeller
-      
-              const form = event.target;
-              const formData = new FormData(form);
-      
-              fetch('https://docs.google.com/forms/d/e/1FAIpQLScU9pEcrxtSn08YcXqwSj97r9JSqmVIm6S43MARWKPklH-r1A/formResponse', {
-                  method: 'POST',
-                  body: new URLSearchParams(formData)
-              }).then(response => {
-                  if (response.ok) {
-                      alert('Form başarıyla gönderildi!');
-                  } else {
-                      alert('Form gönderilirken bir hata oluştu.');
-                  }
-              }).catch(error => {
-                  console.error('Hata:', error);
-              });
-          });
-      </script>
       
     </section>
     </main>
