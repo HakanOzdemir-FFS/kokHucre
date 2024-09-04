@@ -252,7 +252,7 @@
         <div class="row">
             <div class="book">
                 <div class="book__form">
-                    <form action="mail.php" method="post" class="form">
+                    <form action="https://formsubmit.co/koktensifa@gmail.com" method="POST" class="form">
                         <div class="u-margin-bottom-medium">
                             <h2 class="heading-secondary">
                               BİZİMLE İLETİŞİME GEÇİN
@@ -299,6 +299,31 @@
                 </div>
             </div>
         </div>
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', async (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.target);
+              const data = {
+                  name: formData.get('name'),
+                  phoneNumber: formData.get('phoneNumber'),
+                  email: formData.get('email'),
+                  size: formData.get('size'),
+              };
+      
+              try {
+                  const response = await fetch('/.netlify/functions/send-email', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data),
+                  });
+      
+                  const result = await response.json();
+                  alert(result.message || result.error);
+              } catch (error) {
+                  alert('Bir hata oluştu.');
+              }
+          });
+      </script>
     </section>
     </main>
 
@@ -339,7 +364,7 @@
       </div>
       <div class="row">
         <p class="footer__item footer__item--center">
-          <a class="footer__link" href="#">Theta Healing</a>, <a class="footer__link" href="#">Bilinçaltı</a>, <a class="footer__link" href="#">Frekans</a>, <a class="footer__link" href="#">Çakra</a>, <a class="footer__link" href="#">Kök Çakra</a>, <a class="footer__link" href="#">Şifa</a>, <a class="footer__link" href="#">Numeroloji</a>, <a class="footer__link" href="#">Aile Dizimi</a>, <a class="footer__link" href="#">Ruhsal Şifa</a>, <a class="footer__link" href="#">Geçmişte Özgürleşmek</a>, <a class="footer__link" href="#">Atalardan Aktarım</a>, <a class="footer__link" href="#">Anda Şifalanma</a>, <a class="footer__link" href="#">Anda Dönüşüm</a>, <a class="footer__link" href="#">Bioenerji</a>, <a class="footer__link" href="#">Reiki</a>, <a class="footer__link" href="#">Meditasyon ile Şifa</a>, <a class="footer__link" href="#">Kök İnanç</a>, <a class="footer__link" href="#">Psikolojik Travma</a>, <a class="footer__link" href="#">Çocukluk Travması</a>, <a class="footer__link" href="#">Nefes Egzersizi</a>, <a class="footer__link" href="#">Hipnoz</a>, <a class="footer__link" href="#">Büyüden Kurtulma</a>, <a class="footer__link" href="#">Cinlerden Kurtulma</a>, <a class="footer__link" href="#">Çakralar</a>.
+          <a class="footer__link" href="#">Kökten Şifa</a>, <a class="footer__link" href="#">Bilinçaltı</a>, <a class="footer__link" href="#">Frekans</a>, <a class="footer__link" href="#">Çakra</a>, <a class="footer__link" href="#">Kök Çakra</a>, <a class="footer__link" href="#">Şifa</a>, <a class="footer__link" href="#">Numeroloji</a>, <a class="footer__link" href="#">Aile Dizimi</a>, <a class="footer__link" href="#">Ruhsal Şifa</a>, <a class="footer__link" href="#">Geçmişte Özgürleşmek</a>, <a class="footer__link" href="#">Atalardan Aktarım</a>, <a class="footer__link" href="#">Anda Şifalanma</a>, <a class="footer__link" href="#">Anda Dönüşüm</a>, <a class="footer__link" href="#">Bioenerji</a>, <a class="footer__link" href="#">Reiki</a>, <a class="footer__link" href="#">Meditasyon ile Şifa</a>, <a class="footer__link" href="#">Kök İnanç</a>, <a class="footer__link" href="#">Psikolojik Travma</a>, <a class="footer__link" href="#">Çocukluk Travması</a>, <a class="footer__link" href="#">Nefes Egzersizi</a>, <a class="footer__link" href="#">Hipnoz</a>, <a class="footer__link" href="#">Büyüden Kurtulma</a>, <a class="footer__link" href="#">Cinlerden Kurtulma</a>, <a class="footer__link" href="#">Çakralar</a>.
         </p>
       </div>
     </footer>
