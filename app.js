@@ -108,7 +108,33 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
       certImageUrl = await getDownloadURL(certSnapshot.ref);
     }
 
-    const dateDifference = card.dateDifference;
+    function calculateDateDifference(startDate) {
+      const today = new Date();
+      const start = new Date(startDate);
+  
+      let years = today.getFullYear() - start.getFullYear();
+      let months = today.getMonth() - start.getMonth();
+      let days = today.getDate() - start.getDate();
+  
+      if (days < 0) {
+        months--;
+        const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += lastMonth.getDate();
+      }
+  
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+  
+      return {
+        years: years,
+        months: months,
+        days: days,
+      };
+    }
+
+    var dateDifference = calculateDateDifference(certDate);
 
     // Firestore'a kaydet
     await addDoc(collection(db, 'cards'), {
