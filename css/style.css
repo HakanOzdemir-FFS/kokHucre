@@ -832,9 +832,15 @@ button.prev, button.next {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #333; }
+
+  .card__cert {
+    width: 100%;
+    height: 50%;
+    background-color: red;
+  }
   .card__cta {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -846,15 +852,12 @@ button.prev, button.next {
       color: #28b485; }
     .card__cta__btn--2 {
       color: #5643fa; }
-  .card__price-box {
-    margin-bottom: 6rem; }
   .card__price-value {
     font-size: 4rem;
     font-weight: 100; }
   .card__price-only {
     font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem; }
+    text-transform: uppercase; }
   .card__filter {
     font-size: 3rem;
     width: 100%; }

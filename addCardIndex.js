@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     </div>
                   </div>
                   <div class="card__side card__side--back card__side--back-${j}">
+                  <div class="card__cert"></div>
                     <div class="card__cta">
                       <div class="card__price-box">
                         <p class="card__price-only">${card.title}</p>

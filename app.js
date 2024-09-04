@@ -81,8 +81,10 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
   var cardDescription = document.getElementById("card-description").value;
   var certDate = document.getElementById("cert-date").value;
   var cardImageInput = document.getElementById("cardImage");
+  var certImageInput = document.getElementById("certImage");
 
   var file = cardImageInput.files[0];
+  var file2 = certImageInput.files[0];
   var reader = new FileReader();
 
   function calculateDateDifference(startDate) {
@@ -113,6 +115,7 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
 
   reader.onloadend = async function () {
     var cardImage = reader.result;
+    var certImage = reader.result;
     var dateDifference = calculateDateDifference(certDate);
 
     try {
@@ -121,6 +124,7 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
         description: cardDescription,
         date: certDate,
         image: cardImage,
+        certImage: certImage,
         dateDifference: dateDifference,
         timestamp: new Date()
       });
@@ -131,7 +135,7 @@ document.getElementById("create-card-btn").addEventListener("click", async funct
     }
   };
 
-  if (file) {
+  if (file || file2) {
     reader.readAsDataURL(file);
   } else {
     console.error("No file selected.");
