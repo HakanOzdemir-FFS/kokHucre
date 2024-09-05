@@ -1191,7 +1191,7 @@ button.next.next {
   }
   .card__cta {
     position: relative;
-    top: 15%;
+    top: 0;
   }
   .card__price-box {
     margin-bottom: 3rem;
